@@ -3,6 +3,7 @@ import Link from "next/link";
 import { Button } from "../components/Button";
 import { styled } from "../stitches.config";
 import { Section } from "../components/Section";
+import { Notification } from "../components/Notification";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -25,6 +26,7 @@ const SidebarListItem = styled("li", {
 
 const MainWrapper = styled("div", {
   paddingLeft: 250,
+  paddingRight: 100,
 });
 
 const Home: NextPage = () => {
@@ -50,7 +52,8 @@ const Home: NextPage = () => {
         <Section size="1">
           <h2 id="button">Button</h2>
           <p>A Button</p>
-          <Button>Ima button</Button>
+          <Button>Primary button</Button>
+          <Button color="red">Delete</Button>
         </Section>
         <Section size="1">
           <h2 id="checkbox">Checkbox</h2>
@@ -60,7 +63,23 @@ const Home: NextPage = () => {
         <Section size="1">
           <h2 id="notification">Notification</h2>
           <p>A Notification</p>
-          <input type="checkbox" />
+          <h3>Props</h3>
+          <p>
+            <code>flavor?: string [danger, info, warning]</code>
+          </p>
+          <Notification>
+            <p>
+              <strong>Hey</strong>
+            </p>
+            <p>Some message goes here</p>
+          </Notification>
+          <Notification flavor="info">An info message</Notification>
+          <Notification flavor="warning">
+            Warning: be careful before you do something
+          </Notification>
+          <Notification flavor="danger">
+            Danger: this could be destructive
+          </Notification>
         </Section>
       </MainWrapper>
     </div>

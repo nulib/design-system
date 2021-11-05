@@ -13,6 +13,39 @@ import {
 import type * as Stitches from "@stitches/react";
 export type { VariantProps } from "@stitches/react";
 
+const nuPurples = {
+  nuPurple120: "#401f68",
+  nuPurple: "#4e2a84", // default NU purple
+  nuPurple70: "#765da0",
+  nuPurple60: "#836eaa",
+  nuPurple30: "#b6acd1",
+  nuPurple10: "#e4e0ee",
+};
+const richBlacks = {
+  richBlack80: "#342f2e", // default body text
+  richBlack50: "#716c6b",
+  richBlack20: "#bbb8b8",
+  richBlack10: "#d8d6d6",
+};
+const nuGreen = {
+  green: "#58b947",
+};
+const nuBlue = {
+  blue: "#5091cd",
+};
+const nuYellow = {
+  yellow: "#ede93b",
+};
+const nuGold = {
+  gold: "#ffc520",
+};
+const nuRed2 = {
+  red: "#ef553f",
+};
+const white = {
+  white: "#fff",
+};
+
 export const {
   styled,
   css,
@@ -25,10 +58,14 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      ...gray,
-      ...blue,
-      ...red,
-      ...green,
+      ...nuPurples,
+      ...richBlacks,
+      ...nuGreen,
+      ...nuBlue,
+      ...nuYellow,
+      ...nuGold,
+      ...nuRed2,
+      ...white,
     },
     space: {
       1: "5px",
@@ -218,6 +255,12 @@ export const {
       WebkitBackgroundClip: value,
       backgroundClip: value,
     }),
+  },
+});
+
+export const globalStyles = globalCss({
+  html: {
+    color: "$richBlack50",
   },
 });
 
