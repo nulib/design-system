@@ -1,13 +1,16 @@
 import type { NextPage } from "next";
 import Link from "next/link";
+import Image from "next/image";
 import { Button } from "../components/Button";
 import { styled } from "../stitches.config";
 import { Section } from "../components/Section";
 import { Notification } from "../components/Notification";
+import { Tag } from "../components/Tag";
+import { SpacerLine } from "../components/SpacerLine";
 
 const Sidebar = styled("aside", {
   position: "fixed",
-  top: "$7",
+  top: "$1",
   left: 0,
   bottom: 0,
   overflowY: "auto",
@@ -23,6 +26,9 @@ const SidebarListItem = styled("li", {
   padding: "$1",
   listStyle: "none",
 });
+const StyledN = styled("div", {
+  maxWidth: "$8",
+});
 
 const MainWrapper = styled("div", {
   paddingLeft: 250,
@@ -30,12 +36,25 @@ const MainWrapper = styled("div", {
 });
 
 const Home: NextPage = () => {
+  const handleClick = () => console.log("yo dude");
+
   return (
     <div>
       <Sidebar>
+        <StyledN>
+          <Image
+            src="/images/N-purple-120.png"
+            width="600"
+            height="577"
+            alt="Northwestern N Logo"
+          />
+        </StyledN>
         <SidebarList>
           <SidebarListItem>
             <Link href="#button">Button</Link>
+          </SidebarListItem>
+          <SidebarListItem>
+            <Link href="#tag">Tag</Link>
           </SidebarListItem>
           <SidebarListItem>
             <Link href="#checkbox">Checkbox</Link>
@@ -52,34 +71,85 @@ const Home: NextPage = () => {
         <Section size="1">
           <h2 id="button">Button</h2>
           <p>A Button</p>
-          <Button>Primary button</Button>
-          <Button color="red">Delete</Button>
+          <Button>Default Button</Button>
+          <Button isPrimary>Primary</Button>
+          <Button isDanger>Delete</Button>
         </Section>
+
+        <SpacerLine />
+
+        <Section size="1">
+          <h2 id="tag">Tag</h2>
+          <p>A Tag</p>
+          <Tag>Hey hey</Tag>
+          <Tag isWarning>Ima warning</Tag>
+          <Tag isSuccess>Published</Tag>
+          <Tag isPrimary>Video</Tag>
+          <Tag isInfo>Info</Tag>
+          <Tag isDanger>Errors ingesting</Tag>
+          <h3>Props</h3>
+          <p>
+            <code>
+              isDanger?: bool
+              <br />
+              isInfo?: bool
+              <br />
+              isPrimary?: bool
+              <br />
+              isSuccess?: bool
+              <br />
+              isWarning?: bool
+            </code>
+          </p>
+        </Section>
+
+        <SpacerLine />
+
         <Section size="1">
           <h2 id="checkbox">Checkbox</h2>
           <p>A Checkbox</p>
           <input type="checkbox" />
         </Section>
+
+        <SpacerLine />
+
         <Section size="1">
           <h2 id="notification">Notification</h2>
           <p>A Notification</p>
-          <h3>Props</h3>
-          <p>
-            <code>flavor?: string [danger, info, warning]</code>
-          </p>
           <Notification>
             <p>
               <strong>Hey</strong>
             </p>
-            <p>Some message goes here</p>
+            <p>
+              Some message goes here and this is the default notification
+              color/style
+            </p>
           </Notification>
-          <Notification flavor="info">An info message</Notification>
-          <Notification flavor="warning">
+          <Notification isSuccess>
+            You have successfully completed some action
+          </Notification>
+          <Notification isInfo isCentered>
+            An info message. We might not even need this? But it shows
+            notifications can be centered too
+          </Notification>
+          <Notification isWarning>
             Warning: be careful before you do something
           </Notification>
-          <Notification flavor="danger">
+          <Notification isDanger>
             Danger: this could be destructive
           </Notification>
+          <h3>Props</h3>
+          <p>
+            <code>
+              isDanger?: bool
+              <br />
+              isInfo?: bool
+              <br />
+              isSuccess?: bool
+              <br />
+              isWarning?: bool
+            </code>
+          </p>
         </Section>
       </MainWrapper>
     </div>

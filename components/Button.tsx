@@ -1,6 +1,7 @@
-import { styled } from "../stitches.config";
+import React, { forwardRef } from "react";
+import { styled, CSS, VariantProps, colorHelpers } from "../stitches.config";
 
-export const Button = styled("button", {
+const StyledButton = styled("button", {
   // Reset
   all: "unset",
   alignItems: "center",
@@ -21,8 +22,8 @@ export const Button = styled("button", {
 
   // Custom
   border: "none",
-  backgroundColor: "$nuPurple",
-  color: "White",
+  backgroundColor: "$richBlack10",
+  color: "$richBlack50",
   cursor: "pointer",
   display: "inline-block",
   fontSize: "$4",
@@ -49,13 +50,23 @@ export const Button = styled("button", {
 
   // Variants
   variants: {
-    color: {
-      red: {
-        backgroundColor: "$red",
+    isPrimary: {
+      true: {
+        ...colorHelpers.isPrimary,
       },
-      gold: {
-        backgroundColor: "$gold",
+    },
+    isDanger: {
+      true: {
+        ...colorHelpers.isDanger,
       },
     },
   },
 });
+
+type ButtonComponentProps = React.ButtonHTMLAttributes<HTMLButtonElement>;
+type ButtonVariants = VariantProps<typeof StyledButton>;
+type ButtonProps = ButtonComponentProps & ButtonVariants & { css?: CSS };
+
+export const Button = (props: ButtonProps) => {
+  return <StyledButton {...props} />;
+};

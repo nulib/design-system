@@ -264,6 +264,8 @@ export const globalStyles = globalCss({
   },
 });
 
+export type CSS = Stitches.CSS<typeof config>;
+
 export const darkTheme = createTheme("dark-theme", {
   colors: {
     ...grayDark,
@@ -272,3 +274,12 @@ export const darkTheme = createTheme("dark-theme", {
     ...greenDark,
   },
 });
+
+export const colorHelpers = {
+  isDanger: { color: "$white", backgroundColor: "$red" },
+  isGrey: { color: "$richBlack50", backgroundColor: "$richBlack10" },
+  isInfo: { color: "$white", backgroundColor: "$blue" },
+  isPrimary: { color: "$white", backgroundColor: "$nuPurple" },
+  isSuccess: { color: "$white", backgroundColor: "$green" },
+  isWarning: { color: "$white", backgroundColor: "$gold" },
+};
