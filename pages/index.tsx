@@ -7,6 +7,7 @@ import { Section } from "../components/Section";
 import { Notification } from "../components/Notification";
 import { Tag } from "../components/Tag";
 import { SpacerLine } from "../components/SpacerLine";
+import { FaBeer } from "react-icons/fa";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -73,7 +74,23 @@ const Home: NextPage = () => {
           <p>A Button</p>
           <Button>Default Button</Button>
           <Button isPrimary>Primary</Button>
+          <Button isLight>Light Style</Button>
           <Button isDanger>Delete</Button>
+          <Button isText>Plain ol text</Button>
+        </Section>
+
+        <SpacerLine />
+
+        <Section size="1">
+          <h2 id="button">Button with Icon</h2>
+          <p>
+            A Button can wrap multiple elements. To use an icon, wrap your
+            button text in a `span`
+          </p>
+          <Button>
+            <FaBeer />
+            <span>Lets Go</span>
+          </Button>
         </Section>
 
         <SpacerLine />

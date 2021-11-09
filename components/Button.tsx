@@ -21,11 +21,11 @@ const StyledButton = styled("button", {
   WebkitTapHighlightColor: "rgba(0,0,0,0)",
 
   // Custom
-  border: "none",
-  backgroundColor: "$richBlack10",
+  border: "1px solid $richBlack10",
+  backgroundColor: "$white",
   color: "$richBlack50",
   cursor: "pointer",
-  display: "inline-block",
+  display: "inline-flex",
   fontSize: "$4",
   margin: "0 .5em .5em 0",
   padding: ".8em 1em .7em 1em",
@@ -41,22 +41,52 @@ const StyledButton = styled("button", {
     zIndex: "-1",
   },
   "&:hover, &:active": {
-    opacity: "0.5",
-    borderBottom: "none",
+    borderColor: "$richBlack20",
+    //borderBottom: "none",
   },
   "&:focus": {
     border: "2px dashed",
   },
 
+  // For icons
+  "& span": {
+    paddingLeft: "$1",
+  },
+
   // Variants
   variants: {
+    isLight: {
+      true: {
+        border: "none",
+        "&:hover": {
+          opacity: "0.5",
+        },
+        ...colorHelpers.isGrey,
+      },
+    },
     isPrimary: {
       true: {
+        border: "none",
+        "&:hover": {
+          opacity: "0.5",
+        },
         ...colorHelpers.isPrimary,
+      },
+    },
+    isText: {
+      true: {
+        border: "none",
+        "&:hover": {
+          textDecoration: "underline",
+        },
       },
     },
     isDanger: {
       true: {
+        border: "none",
+        "&:hover": {
+          opacity: "0.5",
+        },
         ...colorHelpers.isDanger,
       },
     },
