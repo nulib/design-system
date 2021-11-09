@@ -7,7 +7,7 @@
     "dist"
   ],
   "types": "dist/index.d.ts",
-  "private": true,
+  "private": false,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
