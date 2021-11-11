@@ -9,7 +9,7 @@ export const Tag = styled("div", {
   padding: "$1",
   marginBottom: "$2",
   marginRight: "$2",
-  backgroundColor: "$richBlack10",
+  backgroundColor: "$lightGrey",
   color: "$richBlack50",
   display: "inline-block",
   textTransform: "uppercase",

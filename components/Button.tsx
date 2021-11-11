@@ -61,7 +61,7 @@ const StyledButton = styled("button", {
         "&:hover": {
           opacity: "0.5",
         },
-        ...colorHelpers.isGrey,
+        ...colorHelpers.isLight,
       },
     },
     isPrimary: {
