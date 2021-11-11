@@ -8,6 +8,9 @@ import { Notification } from "../components/Notification";
 import { Tag } from "../components/Tag";
 import { SpacerLine } from "../components/SpacerLine";
 import { FaBeer } from "react-icons/fa";
+import PropsTable from "../components/PropsTable";
+import { CodeBlock } from "../components/CodeBlock";
+import * as codeSamples from "../code-samples";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -37,8 +40,6 @@ const MainWrapper = styled("div", {
 });
 
 const Home: NextPage = () => {
-  const handleClick = () => console.log("yo dude");
-
   return (
     <div>
       <Sidebar>
@@ -72,11 +73,39 @@ const Home: NextPage = () => {
         <Section size="1">
           <h2 id="button">Button</h2>
           <p>A Button</p>
+
           <Button>Default Button</Button>
           <Button isPrimary>Primary</Button>
           <Button isLight>Light Style</Button>
           <Button isDanger>Delete</Button>
           <Button isText>Plain ol text</Button>
+
+          <CodeBlock>{codeSamples.button}</CodeBlock>
+
+          <PropsTable
+            items={[
+              {
+                name: "isDanger?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isLight?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isPrimary?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isText?",
+                description: "Link style button",
+                type: "boolean",
+              },
+            ]}
+          />
         </Section>
 
         <SpacerLine />
@@ -87,10 +116,13 @@ const Home: NextPage = () => {
             A Button can wrap multiple elements. To use an icon, wrap your
             button text in a `span`
           </p>
+
           <Button>
             <FaBeer />
             <span>Lets Go</span>
           </Button>
+
+          <CodeBlock>{codeSamples.buttonIcon}</CodeBlock>
         </Section>
 
         <SpacerLine />
@@ -104,20 +136,38 @@ const Home: NextPage = () => {
           <Tag isPrimary>Video</Tag>
           <Tag isInfo>Info</Tag>
           <Tag isDanger>Errors ingesting</Tag>
-          <h3>Props</h3>
-          <p>
-            <code>
-              isDanger?: bool
-              <br />
-              isInfo?: bool
-              <br />
-              isPrimary?: bool
-              <br />
-              isSuccess?: bool
-              <br />
-              isWarning?: bool
-            </code>
-          </p>
+
+          <CodeBlock>{codeSamples.tag}</CodeBlock>
+
+          <PropsTable
+            items={[
+              {
+                name: "isDanger?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isInfo?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isPrimary?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isSuccess?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isWarning?",
+                description: "Color style",
+                type: "boolean",
+              },
+            ]}
+          />
         </Section>
 
         <SpacerLine />
@@ -155,18 +205,38 @@ const Home: NextPage = () => {
           <Notification isDanger>
             Danger: this could be destructive
           </Notification>
-          <h3>Props</h3>
-          <p>
-            <code>
-              isDanger?: bool
-              <br />
-              isInfo?: bool
-              <br />
-              isSuccess?: bool
-              <br />
-              isWarning?: bool
-            </code>
-          </p>
+
+          <CodeBlock>{codeSamples.notification}</CodeBlock>
+
+          <PropsTable
+            items={[
+              {
+                name: "isDanger?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isCentered?",
+                description: "Center the content of the Notification",
+                type: "boolean",
+              },
+              {
+                name: "isInfo?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isSuccess?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isWarning?",
+                description: "Color style",
+                type: "boolean",
+              },
+            ]}
+          />
         </Section>
       </MainWrapper>
     </div>

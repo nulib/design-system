@@ -27,11 +27,18 @@ const richBlacks = {
   richBlack20: "#bbb8b8",
   richBlack10: "#d8d6d6",
 };
+const nuGreys = {
+  mediumGrey: "#ccc",
+  lightGrey: "#f0f0f0",
+  lightGrey2: "#e3e3e3",
+};
 const nuGreen = {
   green: "#58b947",
+  greenDark: "#008656",
 };
 const nuBlue = {
   blue: "#5091cd",
+  blueDark: "#0d2d6c",
 };
 const nuYellow = {
   yellow: "#ede93b",
@@ -60,6 +67,7 @@ export const {
     colors: {
       ...nuPurples,
       ...richBlacks,
+      ...nuGreys,
       ...nuGreen,
       ...nuBlue,
       ...nuYellow,
@@ -262,6 +270,17 @@ export const globalStyles = globalCss({
   html: {
     color: "$richBlack50",
   },
+  pre: {
+    "& code": {
+      display: "block",
+      background: "none",
+      whiteSpace: "pre",
+      overflowX: "scroll",
+      maxWidth: "100%",
+      minWidth: "100px",
+      padding: "0",
+    },
+  },
 });
 
 export type CSS = Stitches.CSS<typeof config>;
@@ -276,10 +295,18 @@ export const darkTheme = createTheme("dark-theme", {
 });
 
 export const colorHelpers = {
-  isDanger: { color: "$white", backgroundColor: "$red" },
-  isGrey: { color: "$richBlack50", backgroundColor: "$richBlack10" },
-  isInfo: { color: "$white", backgroundColor: "$blue" },
-  isPrimary: { color: "$white", backgroundColor: "$nuPurple" },
-  isSuccess: { color: "$white", backgroundColor: "$green" },
-  isWarning: { color: "$white", backgroundColor: "$gold" },
+  isDanger: { color: "$white", backgroundColor: "$red", fill: "$white" },
+  isLight: {
+    color: "$richBlack80",
+    backgroundColor: "$lightGrey",
+    fill: "$richBlack80",
+  },
+  isInfo: { color: "$white", backgroundColor: "$blue", fill: "$white" },
+  isPrimary: { color: "$white", backgroundColor: "$nuPurple", fill: "$white" },
+  isSuccess: { color: "$white", backgroundColor: "$green", fill: "$white" },
+  isWarning: {
+    color: "$richBlack80",
+    backgroundColor: "$gold",
+    fill: "$richBlack80",
+  },
 };

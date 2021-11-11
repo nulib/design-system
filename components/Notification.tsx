@@ -9,6 +9,15 @@ export const Notification = styled("div", {
   marginBottom: "$2",
   backgroundColor: "$nuPurple10",
   color: "$nuPurple",
+  fill: "$nuPurple",
+
+  "& svg": {
+    fill: "inherit",
+  },
+
+  "& span": {
+    color: "inherit",
+  },
 
   variants: {
     isDanger: {
