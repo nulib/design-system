@@ -10,6 +10,7 @@ export const Notification = styled("div", {
   backgroundColor: "$nuPurple10",
   color: "$nuPurple",
   fill: "$nuPurple",
+  position: "relative",
 
   "& svg": {
     fill: "inherit",
@@ -17,6 +18,12 @@ export const Notification = styled("div", {
 
   "& span": {
     color: "inherit",
+  },
+
+  "& > .delete": {
+    right: "$2",
+    position: "absolute",
+    top: "$2",
   },
 
   variants: {

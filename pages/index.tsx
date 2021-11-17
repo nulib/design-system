@@ -259,6 +259,7 @@ const Home: NextPage = () => {
             notifications can be centered too
           </Notification>
           <Notification isWarning>
+            <span className="delete">X</span>
             Warning: be careful before you do something
           </Notification>
           <Notification isDanger>
@@ -266,6 +267,7 @@ const Home: NextPage = () => {
           </Notification>
 
           <CodeBlock>{codeSamples.notification}</CodeBlock>
+          <CodeBlock>{codeSamples.notificationWithDelete}</CodeBlock>
 
           <PropsTable
             items={[
