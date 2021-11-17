@@ -16,7 +16,7 @@ const StyledTable = styled("table", {
 type PropShape = {
   name: string;
   type: string;
-  description: string;
+  description: string | React.ReactChild;
 };
 
 type TableComponentProps = React.TableHTMLAttributes<HTMLTableElement>;
