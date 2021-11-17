@@ -5,11 +5,12 @@ import { Button } from '@nulib/design-system';
 `;
 
 export const buttonIcon = `
-import { Button } from '@nulib/design-system';
-import { FaPlus } from 'react-icons';
+import { Button, Icon } from '@nulib/design-system';
 
 <Button>
-    <FaPlus />
-    <span>Add Something</span>
+    <Icon isSmall>
+        <Icon.Add />
+    </Icon>
+    <span>Add Item</span>
 </Button>
 `;

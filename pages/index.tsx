@@ -11,6 +11,9 @@ import { FaBeer } from "react-icons/fa";
 import PropsTable from "../components/PropsTable";
 import { CodeBlock } from "../components/CodeBlock";
 import * as codeSamples from "../code-samples";
+import { Placeholder } from "../components/Placeholder";
+import { Icon } from "../components/Icon";
+import { IconContext } from "react-icons/lib";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -56,13 +59,19 @@ const Home: NextPage = () => {
             <Link href="#button">Button</Link>
           </SidebarListItem>
           <SidebarListItem>
-            <Link href="#tag">Tag</Link>
-          </SidebarListItem>
-          <SidebarListItem>
             <Link href="#checkbox">Checkbox</Link>
           </SidebarListItem>
           <SidebarListItem>
+            <Link href="#icon">Icon</Link>
+          </SidebarListItem>
+          <SidebarListItem>
             <Link href="#notification">Notification</Link>
+          </SidebarListItem>
+          <SidebarListItem>
+            <Link href="#placeholder">Placeholder</Link>
+          </SidebarListItem>
+          <SidebarListItem>
+            <Link href="#tag">Tag</Link>
           </SidebarListItem>
         </SidebarList>
       </Sidebar>
@@ -70,6 +79,7 @@ const Home: NextPage = () => {
         <Section size="2">
           <h1>Northwestern Libraries Design System</h1>
         </Section>
+
         <Section size="1">
           <h2 id="button">Button</h2>
           <p>A Button</p>
@@ -118,8 +128,10 @@ const Home: NextPage = () => {
           </p>
 
           <Button>
-            <FaBeer />
-            <span>Lets Go</span>
+            <Icon isSmall>
+              <Icon.Add />
+            </Icon>
+            <span>Add Item</span>
           </Button>
 
           <CodeBlock>{codeSamples.buttonIcon}</CodeBlock>
@@ -128,54 +140,101 @@ const Home: NextPage = () => {
         <SpacerLine />
 
         <Section size="1">
-          <h2 id="tag">Tag</h2>
-          <p>A Tag</p>
-          <Tag>Hey hey</Tag>
-          <Tag isWarning>Ima warning</Tag>
-          <Tag isSuccess>Published</Tag>
-          <Tag isPrimary>Video</Tag>
-          <Tag isInfo>Info</Tag>
-          <Tag isDanger>Errors ingesting</Tag>
-
-          <CodeBlock>{codeSamples.tag}</CodeBlock>
-
-          <PropsTable
-            items={[
-              {
-                name: "isDanger?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isInfo?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isPrimary?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isSuccess?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isWarning?",
-                description: "Color style",
-                type: "boolean",
-              },
-            ]}
-          />
+          <h2 id="checkbox">Checkbox</h2>
+          <p>A Checkbox</p>
+          <input type="checkbox" />
         </Section>
 
         <SpacerLine />
 
         <Section size="1">
-          <h2 id="checkbox">Checkbox</h2>
-          <p>A Checkbox</p>
-          <input type="checkbox" />
+          <h2 id="icon">Icon</h2>
+          <p>
+            An Icon is a component that renders an SVG HTML element from a
+            controlled set of Ionicon sourced icons.
+          </p>
+
+          <Icon isSmall>
+            <Icon.Title>Audio Work</Icon.Title>
+            <Icon.Audio />
+          </Icon>
+
+          <Icon isMedium>
+            <Icon.Title>Audio Work</Icon.Title>
+            <Icon.Video />
+          </Icon>
+
+          <Icon isLarge>
+            <Icon.Title>Image Work</Icon.Title>
+            <Icon.Image />
+          </Icon>
+
+          <CodeBlock>{codeSamples.icon}</CodeBlock>
+
+          <PropsTable
+            items={[
+              {
+                name: "isSmall?",
+                description: "Icon size (1x1)",
+                type: "boolean",
+              },
+              {
+                name: "isMedium?",
+                description: "Icon size (2x2)",
+                type: "boolean",
+              },
+              {
+                name: "isLarge?",
+                description: "Icon size (4x4)",
+                type: "boolean",
+              },
+            ]}
+          />
+
+          <PropsTable
+            items={[
+              {
+                name: "Add",
+                description: (
+                  <Icon isMedium>
+                    <Icon.Title>Add</Icon.Title>
+                    <Icon.Add />
+                  </Icon>
+                ),
+                type: "<Icon.Add />",
+              },
+              {
+                name: "Audio",
+                description: (
+                  <Icon isMedium>
+                    <Icon.Title>Audio</Icon.Title>
+                    <Icon.Audio />
+                  </Icon>
+                ),
+                type: "<Icon.Audio />",
+              },
+              {
+                name: "Image",
+                description: (
+                  <Icon isMedium>
+                    <Icon.Title>Image</Icon.Title>
+                    <Icon.Image />
+                  </Icon>
+                ),
+                type: "<Icon.Image />",
+              },
+              {
+                name: "Video",
+                description: (
+                  <Icon isMedium>
+                    <Icon.Title>Video</Icon.Title>
+                    <Icon.Video />
+                  </Icon>
+                ),
+                type: "<Icon.Video />",
+              },
+            ]}
+          />
         </Section>
 
         <SpacerLine />
@@ -222,6 +281,86 @@ const Home: NextPage = () => {
               },
               {
                 name: "isInfo?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isSuccess?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isWarning?",
+                description: "Color style",
+                type: "boolean",
+              },
+            ]}
+          />
+        </Section>
+
+        <SpacerLine />
+
+        <Section size="1">
+          <h2 id="placeholder">Placeholder</h2>
+          <p>
+            A Placeholder renders an element that extends to the bounds of its
+            container. Children of placeholders can be textual,{" "}
+            <a href="#icon">Icon</a> components, or images, and are centered
+            horizontally and vertically.
+          </p>
+          <div style={{ width: "200px", height: "200px" }}>
+            <Placeholder>
+              <Icon isMedium>
+                <Icon.Title>Audio Work</Icon.Title>
+                <Icon.Audio />
+              </Icon>
+            </Placeholder>
+          </div>
+          <div style={{ width: "200px", height: "200px" }}>
+            <Placeholder>
+              <strong>Oops</strong> There should be something here.
+            </Placeholder>
+          </div>
+          <div style={{ width: "200px", height: "200px" }}>
+            <Placeholder>
+              <img
+                alt="Scouts"
+                src="https://iiif.stack.rdc.library.northwestern.edu/iiif/2/ff2f57ff-6952-4ea6-b55b-ae2a76c13efc/full/600,/0/default.jpg"
+              />
+            </Placeholder>
+          </div>
+
+          <CodeBlock>{codeSamples.placeholder}</CodeBlock>
+        </Section>
+
+        <SpacerLine />
+
+        <Section size="1">
+          <h2 id="tag">Tag</h2>
+          <p>A Tag</p>
+          <Tag>Hey hey</Tag>
+          <Tag isWarning>Ima warning</Tag>
+          <Tag isSuccess>Published</Tag>
+          <Tag isPrimary>Video</Tag>
+          <Tag isInfo>Info</Tag>
+          <Tag isDanger>Errors ingesting</Tag>
+
+          <CodeBlock>{codeSamples.tag}</CodeBlock>
+
+          <PropsTable
+            items={[
+              {
+                name: "isDanger?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isInfo?",
+                description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isPrimary?",
                 description: "Color style",
                 type: "boolean",
               },
