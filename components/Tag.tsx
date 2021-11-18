@@ -6,7 +6,7 @@ export const Tag = styled("div", {
 
   // Custom
   borderRadius: "5px",
-  padding: "$1",
+  padding: "1px $1",
   marginBottom: "$2",
   marginRight: "$2",
   backgroundColor: "$lightGrey",
