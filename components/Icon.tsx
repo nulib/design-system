@@ -1,6 +1,6 @@
 import { VariantProps, CSS } from "../stitches.config";
 import { StyledIcon } from "./Icon.styled";
-import { Add, Audio, Image, Video } from "./Icons";
+import { Add, Audio, Close, Image, Video } from "./Icons";
 
 /**
  * Define SVG subelement <title>
@@ -23,6 +23,7 @@ type IconShape = {
 interface IconComposition {
   Add: React.FC<any>;
   Audio: React.FC;
+  Close: React.FC;
   Image: React.FC;
   Title: React.FC<TitleShape>;
   Video: React.FC;
@@ -57,6 +58,7 @@ Icon.Title = Title;
  */
 Icon.Add = Add;
 Icon.Audio = Audio;
+Icon.Close = Close;
 Icon.Image = Image;
 Icon.Video = Video;
 
