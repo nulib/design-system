@@ -7,13 +7,11 @@ import { Section } from "../components/Section";
 import { Notification } from "../components/Notification";
 import { Tag } from "../components/Tag";
 import { SpacerLine } from "../components/SpacerLine";
-import { FaBeer } from "react-icons/fa";
 import PropsTable from "../components/PropsTable";
 import { CodeBlock } from "../components/CodeBlock";
 import * as codeSamples from "../code-samples";
 import { Placeholder } from "../components/Placeholder";
 import { Icon } from "../components/Icon";
-import { IconContext } from "react-icons/lib";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -151,7 +149,15 @@ const Home: NextPage = () => {
           <h2 id="icon">Icon</h2>
           <p>
             An Icon is a component that renders an SVG HTML element from a
-            controlled set of Ionicon sourced icons.
+            controlled set of{" "}
+            <a
+              href="https://ionic.io/ionicons"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Ionicon
+            </a>{" "}
+            sourced icons.
           </p>
 
           <Icon isSmall>
@@ -214,6 +220,16 @@ const Home: NextPage = () => {
                 type: "<Icon.Audio />",
               },
               {
+                name: "Close",
+                description: (
+                  <Icon isMedium>
+                    <Icon.Title>Close</Icon.Title>
+                    <Icon.Close />
+                  </Icon>
+                ),
+                type: "<Icon.Close />",
+              },
+              {
                 name: "Image",
                 description: (
                   <Icon isMedium>
@@ -242,7 +258,7 @@ const Home: NextPage = () => {
         <Section size="1">
           <h2 id="notification">Notification</h2>
           <p>A Notification</p>
-          <Notification>
+          <Notification isClosable>
             <p>
               <strong>Hey</strong>
             </p>
@@ -258,8 +274,8 @@ const Home: NextPage = () => {
             An info message. We might not even need this? But it shows
             notifications can be centered too
           </Notification>
-          <Notification isWarning>
-            Warning: be careful before you do something
+          <Notification isWarning isClosable>
+            Warning: You can add a close button with the `isClosable` prop
           </Notification>
           <Notification isDanger>
             Danger: this could be destructive
@@ -277,6 +293,12 @@ const Home: NextPage = () => {
               {
                 name: "isCentered?",
                 description: "Center the content of the Notification",
+                type: "boolean",
+              },
+              {
+                name: "isClosable?",
+                description:
+                  "Adds a close button, which lets the user close a Notification",
                 type: "boolean",
               },
               {
