@@ -55,6 +55,11 @@ const StyledButton = styled("button", {
 
   // Variants
   variants: {
+    isLowercase: {
+      true: {
+        textTransform: "unset",
+      },
+    },
     isLight: {
       true: {
         border: "none",
@@ -76,6 +81,7 @@ const StyledButton = styled("button", {
     isText: {
       true: {
         border: "none",
+        backgroundColor: "transparent",
         "&:hover": {
           textDecoration: "underline",
         },
