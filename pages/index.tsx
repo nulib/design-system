@@ -87,6 +87,7 @@ const Home: NextPage = () => {
           <Button isLight>Light Style</Button>
           <Button isDanger>Delete</Button>
           <Button isText>Plain ol text</Button>
+          <Button isLowercase>Button w/o Uppers</Button>
 
           <CodeBlock>{codeSamples.button}</CodeBlock>
 
@@ -100,6 +101,11 @@ const Home: NextPage = () => {
               {
                 name: "isLight?",
                 description: "Color style",
+                type: "boolean",
+              },
+              {
+                name: "isLowercase?",
+                description: "Text style",
                 type: "boolean",
               },
               {
