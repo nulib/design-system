@@ -54,9 +54,13 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 ### For NPM
 
 ```bash
-npm run ds:build
+npm run build
 ```
 
 ### Static site generation (Docs)
 
-...coming soon
+```bash
+npm run build:static
+```
+
+...Hosting info coming soon

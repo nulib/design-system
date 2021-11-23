@@ -10,11 +10,12 @@
   "private": false,
   "scripts": {
     "dev": "next dev",
-    "build": "next build",
+    "build": "rollup -c",
+    "build:static": "next build",
+    "prepublishOnly": "npm run build",
     "start": "next start",
     "lint": "next lint",
-    "test": "echo \"Error: no test specified\" && exit 0",
-    "ds:build": "rollup -c"
+    "test": "echo \"Error: no test specified\" && exit 0"
   },
   "peerDependencies": {
     "react": "17.0.2",
