@@ -1,3 +1,5 @@
+import React from "react";
+
 const Add: React.FC = () => (
   <path
     fill="none"

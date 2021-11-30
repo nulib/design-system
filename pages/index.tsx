@@ -12,6 +12,7 @@ import { CodeBlock } from "../components/CodeBlock";
 import * as codeSamples from "../code-samples";
 import { Placeholder } from "../components/Placeholder";
 import { Icon } from "../components/Icon";
+import { Popover } from "../components/Popover";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -69,6 +70,9 @@ const Home: NextPage = () => {
             <Link href="#placeholder">Placeholder</Link>
           </SidebarListItem>
           <SidebarListItem>
+            <Link href="#popover">Popover</Link>
+          </SidebarListItem>
+          <SidebarListItem>
             <Link href="#tag">Tag</Link>
           </SidebarListItem>
         </SidebarList>
@@ -88,11 +92,17 @@ const Home: NextPage = () => {
           <Button isDanger>Delete</Button>
           <Button isText>Text</Button>
           <Button isLowercase>Button w/o Uppers</Button>
+          <Button as="span">Button as a span</Button>
 
           <CodeBlock>{codeSamples.button}</CodeBlock>
 
           <PropsTable
             items={[
+              {
+                name: "as",
+                description: "Element type",
+                type: "string",
+              },
               {
                 name: "isDanger?",
                 description: "Color style",
@@ -125,7 +135,7 @@ const Home: NextPage = () => {
         <SpacerLine />
 
         <Section size="1">
-          <h2 id="button">Button with Icon</h2>
+          <h2 id="button">Button w/ Icon</h2>
           <p>
             A Button can wrap multiple elements. To use an icon, wrap your
             button text in a `span`
@@ -359,6 +369,128 @@ const Home: NextPage = () => {
           </div>
 
           <CodeBlock>{codeSamples.placeholder}</CodeBlock>
+        </Section>
+
+        <SpacerLine />
+
+        <Section size="1">
+          <h2 id="popover">Popover</h2>
+          <p>
+            A popover is a component that couples a trigger with some content
+            that displays in an attached pane. When wrapping a Button component
+            with Popover.Trigger, the <strong>as</strong> prop should be used on
+            Buttons.
+          </p>
+
+          <Popover>
+            <Popover.Trigger aria-controls="this-popover">
+              <Button as="span">
+                <Icon isSmall>
+                  <Icon.Add />
+                </Icon>
+                <span>Default</span>
+              </Button>
+            </Popover.Trigger>
+            <Popover.Content id="this-popover">
+              <nav
+                style={{
+                  display: "flex",
+                  flexDirection: "column",
+                  fill: "#666",
+                  lineHeight: "1.75rem",
+                }}
+              >
+                <strong>Default</strong>
+                <a>
+                  <Icon isSmall>
+                    <Icon.Image />
+                  </Icon>
+                  <span> Update Image</span>
+                </a>
+                <a>
+                  <Icon isSmall>
+                    <Icon.Video />
+                  </Icon>
+                  <span> Connect Video</span>
+                </a>
+                <a>
+                  <Icon isSmall>
+                    <Icon.Audio />
+                  </Icon>
+                  <span> Add Audio</span>
+                </a>
+              </nav>
+            </Popover.Content>
+          </Popover>
+
+          <Popover>
+            <Popover.Trigger aria-controls="another-popover">
+              <Button isPrimary as="span">
+                Primary
+              </Button>
+            </Popover.Trigger>
+            <Popover.Content id="another-popover" isPrimary>
+              <div style={{ height: "150px" }}>
+                <Placeholder>
+                  <Icon isMedium>
+                    <Icon.Image />
+                  </Icon>
+                </Placeholder>
+              </div>
+              <p>
+                <strong>Primary</strong>
+              </p>
+              <p>
+                Nullam nec diam velit. Duis pulvinar, mi at dapibus pulvinar,
+                est metus rhoncus nulla, vel pretium sapien quam ac ipsum.
+              </p>
+              <Button isLight isLowercase>
+                Quisque hendrerit
+              </Button>
+            </Popover.Content>
+          </Popover>
+
+          <CodeBlock>{codeSamples.popover}</CodeBlock>
+
+          <h3>Content</h3>
+          <PropsTable
+            items={[
+              {
+                name: "isPrimary?",
+                description: "Color style",
+                type: "boolean",
+              },
+            ]}
+          />
+        </Section>
+
+        <SpacerLine />
+
+        <Section size="1">
+          <h2 id="popover-text">Popover w/ Text Trigger</h2>
+          <p>
+            Popover Triggers can also wrap around text. Though not required this
+            text should indicate to the user that it is actionable in some way.
+          </p>
+
+          <Popover>
+            <Popover.Trigger aria-controls="text-popover">
+              <a style={{ color: "#4e2a84", fontSize: "1rem" }}>Text Popover</a>
+            </Popover.Trigger>
+            <Popover.Content id="text-popover">
+              <p
+                style={{
+                  lineHeight: "1.75rem",
+                }}
+              >
+                Fusce augue eros, convallis eget nunc a, dictum condimentum
+                nunc. Vestibulum pulvinar risus et eleifend placerat. Nullam vel
+                interdum felis. Aliquam vitae lorem vitae orci pretium aliquet.
+              </p>
+            </Popover.Content>
+          </Popover>
+
+          <CodeBlock>{codeSamples.popoverText}</CodeBlock>
         </Section>
 
         <SpacerLine />

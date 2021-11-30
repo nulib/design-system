@@ -1,6 +1,8 @@
 import { styled } from "../stitches.config";
 
 export const StyledIcon = styled("svg", {
+  display: "inline-flex",
+
   variants: {
     isLarge: {
       true: {

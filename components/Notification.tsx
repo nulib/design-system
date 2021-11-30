@@ -1,4 +1,5 @@
 import React from "react";
+import { Icon } from "./Icon";
 import { styled, colorHelpers, CSS, VariantProps } from "../stitches.config";
 
 const StyledNotification = styled("div", {
@@ -21,15 +22,6 @@ const StyledNotification = styled("div", {
     color: "inherit",
   },
 
-  "> button.delete-button": {
-    backgroundColor: "transparent",
-    border: "none",
-    cursor: "pointer",
-    right: "$2",
-    position: "absolute",
-    top: "$2",
-  },
-
   variants: {
     isDanger: {
       true: { ...colorHelpers.isDanger },
@@ -49,6 +41,15 @@ const StyledNotification = styled("div", {
       true: { ...colorHelpers.isWarning },
     },
   },
+});
+
+const StyledClose = styled("button", {
+  cursor: "pointer",
+  right: "$2",
+  position: "absolute",
+  top: "$2",
+  background: "transparent",
+  border: "none",
 });
 
 type NotificationShape = {
@@ -74,19 +75,11 @@ export const Notification = (props: NotificationProps) => {
   return (
     <StyledNotification {...styleProps}>
       {isClosable && (
-        <button className="delete-button" onClick={handleCloseClick}>
-          <svg
-            data-testid="icon-svg"
-            role="img"
-            viewBox="0 0 512 512"
-            xmlns="http://www.w3.org/2000/svg"
-            width="20"
-            height="20"
-          >
-            <title>Close</title>
-            <path d="M289.94 256l95-95A24 24 0 00351 127l-95 95-95-95a24 24 0 00-34 34l95 95-95 95a24 24 0 1034 34l95-95 95 95a24 24 0 0034-34z" />
-          </svg>
-        </button>
+        <StyledClose aria-label="Close" onClick={handleCloseClick}>
+          <Icon isSmall>
+            <Icon.Close />
+          </Icon>
+        </StyledClose>
       )}
       {props.children}
     </StyledNotification>

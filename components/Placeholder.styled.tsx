@@ -11,6 +11,7 @@ export const StyledPlaceholder = styled("div", {
   padding: "1rem",
   textAlign: "center",
   lineHeight: "1.55em",
+  boxSizing: "content-box",
 
   "> span": {
     display: "inline-flex",
