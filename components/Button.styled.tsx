@@ -24,6 +24,7 @@ export const StyledButton = styled("button", {
   backgroundColor: "$white",
   color: "$richBlack50",
   cursor: "pointer",
+  display: "inline-flex",
   fontSize: "$4",
   margin: "0 .5em .5em 0",
   padding: "calc(0.75em - 1px) calc(1em - 1px)",
