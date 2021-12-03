@@ -537,6 +537,35 @@ const Home: NextPage = () => {
             ]}
           />
         </Section>
+
+        <SpacerLine />
+
+        <Section size="1">
+          <h2 id="button">Tag w/ Icon</h2>
+          <p>
+            A Tag can wrap multiple Icon components. To use an icon, as the prop
+            isIcon.
+          </p>
+
+          <Tag isInfo isIcon>
+            <Icon>
+              <Icon.Video />
+            </Icon>
+            Video
+          </Tag>
+
+          <CodeBlock>{codeSamples.tagIcon}</CodeBlock>
+
+          <PropsTable
+            items={[
+              {
+                name: "isIcon?",
+                description: "Layout style",
+                type: "boolean",
+              },
+            ]}
+          />
+        </Section>
       </MainWrapper>
     </div>
   );
