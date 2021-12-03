@@ -93,6 +93,7 @@ const Home: NextPage = () => {
           <Button isText>Text</Button>
           <Button isLowercase>Button w/o Uppers</Button>
           <Button as="span">Button as a span</Button>
+          <Button disabled>Im disabled</Button>
 
           <CodeBlock>{codeSamples.button}</CodeBlock>
 
