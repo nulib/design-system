@@ -17,6 +17,7 @@ export const Tag = styled("div", {
   textTransform: "uppercase",
   fontSize: "$2",
   objectFit: "contain",
+  lineHeight: "1em !important",
 
   "&:last-child": {
     marginRight: "0",
