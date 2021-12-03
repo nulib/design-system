@@ -12,5 +12,5 @@ type ButtonProps = ButtonComponentProps &
   ButtonVariants & { css?: CSS } & ButtonShape;
 
 export const Button = (props: ButtonProps) => {
-  return <StyledButton {...props} role="button" />;
+  return <StyledButton type="button" role="button" {...props} />;
 };
