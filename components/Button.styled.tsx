@@ -46,6 +46,13 @@ export const StyledButton = styled("button", {
   "&:focus": {
     border: "2px dashed",
   },
+  "&:disabled": {
+    opacity: 0.5,
+    cursor: "not-allowed",
+  },
+  "&:disabled:hover": {
+    opacity: 0.5,
+  },
 
   // For icons
   "& span": {
