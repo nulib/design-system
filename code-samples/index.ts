@@ -3,7 +3,7 @@ import { icon } from "./icon";
 import { notification } from "./notification";
 import { placeholder } from "./placeholder";
 import { popover, popoverText } from "./popover";
-import { tag } from "./tag";
+import { tag, tagIcon } from "./tag";
 
 export {
   button,
@@ -14,4 +14,5 @@ export {
   popover,
   popoverText,
   tag,
+  tagIcon,
 };

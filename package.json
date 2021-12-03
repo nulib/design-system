@@ -9,7 +9,7 @@
   "types": "dist/index.d.ts",
   "private": false,
   "scripts": {
-    "dev": "next dev",
+    "dev": "next dev -p 8001",
     "build": "rollup -c",
     "build:static": "next build",
     "prepublishOnly": "npm run build",
