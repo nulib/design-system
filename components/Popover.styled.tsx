@@ -55,7 +55,7 @@ const StyledContent = styled(Popover.Content, {
    */
   '&[data-align="end"]': {
     [`& ${StyledArrow}`]: {
-      margin: "0 2rem",
+      margin: "0 0.7rem",
     },
   },
 
