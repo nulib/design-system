@@ -1,6 +1,6 @@
 import React from "react";
-import { CSS, VariantProps } from "../stitches.config";
-import { Icon } from "./Icon";
+import { CSS, VariantProps } from "stitches.config";
+import { Icon } from "components/Icon/Icon";
 import {
   StyledArrow,
   StyledClose,

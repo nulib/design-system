@@ -1,7 +1,7 @@
-import { Button } from "./Button";
-import PrismWrapper from "../PrismWrapper";
-import PropsTable from "../PropsTable";
-import * as codeSamples from "../../code-samples";
+import { Button } from "components/Button/Button";
+import PrismWrapper from "components/PrismWrapper";
+import PropsTable from "components/PropsTable";
+import { button as code } from "./code-samples";
 
 const ButtonWrapper: React.FC = () => {
   return (
@@ -15,8 +15,8 @@ const ButtonWrapper: React.FC = () => {
       <Button as="span">Button as a span</Button>
       <Button disabled>Im disabled</Button>
 
-      <h3>Example Code</h3>
-      <PrismWrapper code={codeSamples.button} />
+      <h3>Example usage</h3>
+      <PrismWrapper code={code} />
 
       <h3>Props</h3>
       <PropsTable

@@ -1,5 +1,5 @@
 import * as Popover from "@radix-ui/react-popover";
-import { styled, colorHelpers, keyframes } from "../stitches.config";
+import { styled, colorHelpers, keyframes } from "../../stitches.config";
 
 const slideDown = keyframes({
   "0%": { opacity: 0, transform: "translateY(1rem)" },

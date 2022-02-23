@@ -1,6 +1,7 @@
 import { Button } from "components/Button/Button";
-import { Icon } from "components/Icon";
+import { Icon } from "components/Icon/Icon";
 import PrismWrapper from "components/PrismWrapper";
+import { buttonIcon as code } from "./code-samples";
 
 const IconButton: React.FC = () => {
   return (
@@ -12,7 +13,8 @@ const IconButton: React.FC = () => {
         <span>Add Item</span>
       </Button>
 
-      <PrismWrapper code={codeSamples.buttonIcon} />
+      <h3>Example usage</h3>
+      <PrismWrapper code={code} />
     </>
   );
 };

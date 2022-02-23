@@ -3,20 +3,22 @@ import Link from "next/link";
 import Image from "next/image";
 import { styled } from "../stitches.config";
 import { Section } from "../components/Section";
-import { Notification } from "../components/Notification";
-import { Tag } from "../components/Tag";
+import { Tag } from "../components/Tag/Tag";
 import { SpacerLine } from "../components/SpacerLine";
 import PropsTable from "../components/PropsTable";
 import * as codeSamples from "../code-samples";
-import { Placeholder } from "../components/Placeholder";
-import { Icon } from "../components/Icon";
-import { Popover } from "../components/Popover";
+import { Icon } from "../components/Icon/Icon";
 import PrismWrapper from "../components/PrismWrapper";
 
-import { Button } from "components/Button/Button";
-
-import ButtonWrapper from "components/Button";
+import ButtonWrapper from "components/Button/ButtonWrapper";
 import IconButton from "components/Button/IconButton";
+import IconWrapper from "components/Icon/IconWrapper";
+import NotificationWrapper from "components/Notification/NotificationWrapper";
+import PlaceholderWrapper from "components/Placeholder/PlaceholderWrapper";
+import PopoverWrapper from "components/Popover/PopoverWrapper";
+import TextTriggerPopover from "components/Popover/TextTriggerPopover";
+import TagWrapper from "components/Tag/TagWrapper";
+import IconTag from "components/Tag/IconTag";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -119,98 +121,7 @@ const Home: NextPage = () => {
             </a>{" "}
             sourced icons.
           </p>
-
-          <Icon isSmall>
-            <Icon.Title>Audio Work</Icon.Title>
-            <Icon.Audio />
-          </Icon>
-
-          <Icon isMedium>
-            <Icon.Title>Audio Work</Icon.Title>
-            <Icon.Video />
-          </Icon>
-
-          <Icon isLarge>
-            <Icon.Title>Image Work</Icon.Title>
-            <Icon.Image />
-          </Icon>
-
-          <PrismWrapper code={codeSamples.icon} />
-
-          <PropsTable
-            items={[
-              {
-                name: "isSmall?",
-                description: "Icon size (1x1)",
-                type: "boolean",
-              },
-              {
-                name: "isMedium?",
-                description: "Icon size (2x2)",
-                type: "boolean",
-              },
-              {
-                name: "isLarge?",
-                description: "Icon size (4x4)",
-                type: "boolean",
-              },
-            ]}
-          />
-
-          <PropsTable
-            items={[
-              {
-                name: "Add",
-                description: (
-                  <Icon isMedium>
-                    <Icon.Title>Add</Icon.Title>
-                    <Icon.Add />
-                  </Icon>
-                ),
-                type: "<Icon.Add />",
-              },
-              {
-                name: "Audio",
-                description: (
-                  <Icon isMedium>
-                    <Icon.Title>Audio</Icon.Title>
-                    <Icon.Audio />
-                  </Icon>
-                ),
-                type: "<Icon.Audio />",
-              },
-              {
-                name: "Close",
-                description: (
-                  <Icon isMedium>
-                    <Icon.Title>Close</Icon.Title>
-                    <Icon.Close />
-                  </Icon>
-                ),
-                type: "<Icon.Close />",
-              },
-              {
-                name: "Image",
-                description: (
-                  <Icon isMedium>
-                    <Icon.Title>Image</Icon.Title>
-                    <Icon.Image />
-                  </Icon>
-                ),
-                type: "<Icon.Image />",
-              },
-              {
-                name: "Video",
-                description: (
-                  <Icon isMedium>
-                    <Icon.Title>Video</Icon.Title>
-                    <Icon.Video />
-                  </Icon>
-                ),
-                type: "<Icon.Video />",
-              },
-            ]}
-          />
+          <IconWrapper />
         </Section>
 
         <SpacerLine />
@@ -218,66 +129,7 @@ const Home: NextPage = () => {
         <Section size="1">
           <h2 id="notification">Notification</h2>
           <p>A Notification</p>
-          <Notification isClosable>
-            <p>
-              <strong>Hey</strong>
-            </p>
-            <p>
-              Some message goes here and this is the default notification
-              color/style
-            </p>
-          </Notification>
-          <Notification isSuccess>
-            You have successfully completed some action
-          </Notification>
-          <Notification isInfo isCentered>
-            An info message. We might not even need this? But it shows
-            notifications can be centered too
-          </Notification>
-          <Notification isWarning isClosable>
-            Warning: You can add a close button with the `isClosable` prop
-          </Notification>
-          <Notification isDanger>
-            Danger: this could be destructive
-          </Notification>
-
-          <PrismWrapper code={codeSamples.notification} />
-
-          <PropsTable
-            items={[
-              {
-                name: "isDanger?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isCentered?",
-                description: "Center the content of the Notification",
-                type: "boolean",
-              },
-              {
-                name: "isClosable?",
-                description:
-                  "Adds a close button, which lets the user close a Notification",
-                type: "boolean",
-              },
-              {
-                name: "isInfo?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isSuccess?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isWarning?",
-                description: "Color style",
-                type: "boolean",
-              },
-            ]}
-          />
+          <NotificationWrapper />
         </Section>
 
         <SpacerLine />
@@ -290,29 +142,7 @@ const Home: NextPage = () => {
             <a href="#icon">Icon</a> components, or images, and are centered
             horizontally and vertically.
           </p>
-          <div style={{ width: "200px", height: "200px" }}>
-            <Placeholder>
-              <Icon isMedium>
-                <Icon.Title>Audio Work</Icon.Title>
-                <Icon.Audio />
-              </Icon>
-            </Placeholder>
-          </div>
-          <div style={{ width: "200px", height: "200px" }}>
-            <Placeholder>
-              <strong>Oops</strong> There should be something here.
-            </Placeholder>
-          </div>
-          <div style={{ width: "200px", height: "200px" }}>
-            <Placeholder>
-              <img
-                alt="Scouts"
-                src="https://iiif.stack.rdc.library.northwestern.edu/iiif/2/ff2f57ff-6952-4ea6-b55b-ae2a76c13efc/full/600,/0/default.jpg"
-              />
-            </Placeholder>
-          </div>
-
-          <PrismWrapper code={codeSamples.placeholder} />
+          <PlaceholderWrapper />
         </Section>
 
         <SpacerLine />
@@ -325,87 +155,7 @@ const Home: NextPage = () => {
             with Popover.Trigger, the <strong>as</strong> prop should be used on
             Buttons.
           </p>
-
-          <Popover>
-            <Popover.Trigger aria-controls="this-popover">
-              <Button as="span">
-                <Icon isSmall>
-                  <Icon.Add />
-                </Icon>
-                <span>Default</span>
-              </Button>
-            </Popover.Trigger>
-            <Popover.Content id="this-popover">
-              <nav
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  fill: "#666",
-                  lineHeight: "1.75rem",
-                }}
-              >
-                <strong>Default</strong>
-                <a>
-                  <Icon isSmall>
-                    <Icon.Image />
-                  </Icon>
-                  <span> Update Image</span>
-                </a>
-                <a>
-                  <Icon isSmall>
-                    <Icon.Video />
-                  </Icon>
-                  <span> Connect Video</span>
-                </a>
-                <a>
-                  <Icon isSmall>
-                    <Icon.Audio />
-                  </Icon>
-                  <span> Add Audio</span>
-                </a>
-              </nav>
-            </Popover.Content>
-          </Popover>
-
-          <Popover>
-            <Popover.Trigger aria-controls="another-popover">
-              <Button isPrimary as="span">
-                Primary
-              </Button>
-            </Popover.Trigger>
-            <Popover.Content id="another-popover" isPrimary>
-              <div style={{ height: "150px" }}>
-                <Placeholder>
-                  <Icon isMedium>
-                    <Icon.Image />
-                  </Icon>
-                </Placeholder>
-              </div>
-              <p>
-                <strong>Primary</strong>
-              </p>
-              <p>
-                Nullam nec diam velit. Duis pulvinar, mi at dapibus pulvinar,
-                est metus rhoncus nulla, vel pretium sapien quam ac ipsum.
-              </p>
-              <Button isLight isLowercase>
-                Quisque hendrerit
-              </Button>
-            </Popover.Content>
-          </Popover>
-
-          <PrismWrapper code={codeSamples.popover} />
-
-          <h3>Content</h3>
-          <PropsTable
-            items={[
-              {
-                name: "isPrimary?",
-                description: "Color style",
-                type: "boolean",
-              },
-            ]}
-          />
+          <PopoverWrapper />
         </Section>
 
         <SpacerLine />
@@ -416,25 +166,7 @@ const Home: NextPage = () => {
             Popover Triggers can also wrap around text. Though not required this
             text should indicate to the user that it is actionable in some way.
           </p>
-
-          <Popover>
-            <Popover.Trigger aria-controls="text-popover">
-              <a style={{ color: "#4e2a84", fontSize: "1rem" }}>Text Popover</a>
-            </Popover.Trigger>
-            <Popover.Content id="text-popover">
-              <p
-                style={{
-                  lineHeight: "1.75rem",
-                }}
-              >
-                Fusce augue eros, convallis eget nunc a, dictum condimentum
-                nunc. Vestibulum pulvinar risus et eleifend placerat. Nullam vel
-                interdum felis. Aliquam vitae lorem vitae orci pretium aliquet.
-              </p>
-            </Popover.Content>
-          </Popover>
-
-          <PrismWrapper code={codeSamples.popoverText} />
+          <TextTriggerPopover />
         </Section>
 
         <SpacerLine />
@@ -442,44 +174,7 @@ const Home: NextPage = () => {
         <Section size="1">
           <h2 id="tag">Tag</h2>
           <p>A Tag</p>
-          <Tag>Hey hey</Tag>
-          <Tag isWarning>Ima warning</Tag>
-          <Tag isSuccess>Published</Tag>
-          <Tag isPrimary>Video</Tag>
-          <Tag isInfo>Info</Tag>
-          <Tag isDanger>Errors ingesting</Tag>
-
-          <PrismWrapper code={codeSamples.tag} />
-
-          <PropsTable
-            items={[
-              {
-                name: "isDanger?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isInfo?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isPrimary?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isSuccess?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isWarning?",
-                description: "Color style",
-                type: "boolean",
-              },
-            ]}
-          />
+          <TagWrapper />
         </Section>
 
         <SpacerLine />
@@ -490,25 +185,7 @@ const Home: NextPage = () => {
             A Tag can wrap multiple Icon components. To use an icon, as the prop
             isIcon.
           </p>
-
-          <Tag isInfo isIcon>
-            <Icon>
-              <Icon.Video />
-            </Icon>
-            Video
-          </Tag>
-
-          <PrismWrapper code={codeSamples.tagIcon} />
-
-          <PropsTable
-            items={[
-              {
-                name: "isIcon?",
-                description: "Layout style",
-                type: "boolean",
-              },
-            ]}
-          />
+          <IconTag />
         </Section>
       </MainWrapper>
     </div>

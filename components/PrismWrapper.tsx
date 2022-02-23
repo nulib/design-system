@@ -8,6 +8,7 @@ interface PrismWrapperProps {
 }
 
 const Pre = styled("pre", {
+  fontSize: "$3",
   textAlign: "left",
   padding: "$1 $3 $3",
   marginBottom: "$3",

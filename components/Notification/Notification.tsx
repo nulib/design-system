@@ -1,6 +1,6 @@
 import React from "react";
-import { Icon } from "./Icon";
-import { styled, colorHelpers, CSS, VariantProps } from "../stitches.config";
+import { Icon } from "components/Icon/Icon";
+import { styled, colorHelpers, CSS, VariantProps } from "stitches.config";
 
 const StyledNotification = styled("div", {
   // Reset
