@@ -1,5 +1,5 @@
 import React from "react";
-import { CSS, VariantProps } from "../stitches.config";
+import { CSS, VariantProps } from "stitches.config";
 import { StyledButton } from "./Button.styled";
 
 type ButtonShape = {

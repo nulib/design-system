@@ -1,59 +1,25 @@
 import React from "react";
-import Prism from "prismjs";
 import Highlight, { defaultProps } from "prism-react-renderer";
 import vsDark from "prism-react-renderer/themes/vsDark";
+import { styled } from "@stitches/react";
 
 interface PrismWrapperProps {
   code: string;
-  language?: string;
-  plugins?: Array<string>;
 }
 
-const PrismWrapper: React.FC<PrismWrapperProps> = ({
-  code,
-  language = "js",
-  plugins = ["line-numbers"],
-}) => {
-  const codeRef = React.useRef();
+const Pre = styled("pre", {
+  textAlign: "left",
+  padding: "$1 $3 $3",
+  marginBottom: "$3",
+  overflow: "scroll",
+  borderRadius: "$1",
+});
 
-  const highlight = () => {
-    if (codeRef && codeRef.current) {
-      Prism.highlightElement(codeRef.current);
-    }
-  };
-
-  React.useEffect(() => {
-    highlight();
-  }, [code, language, plugins]);
-
+const PrismWrapper: React.FC<PrismWrapperProps> = ({ code }) => {
   return (
-    <pre className={!plugins ? "" : plugins.join(" ")}>
-      <code ref={codeRef} className={`language-${language}`}>
-        {code.trim()}
-      </code>
-    </pre>
-  );
-};
-
-const exampleCode = `
-(function someDemo() {
-  var test = "Hello World!";
-  console.log(test);
-})();
-
-return () => <App />;
-`;
-
-export const Yo = () => {
-  return (
-    <Highlight
-      {...defaultProps}
-      code={exampleCode}
-      language="jsx"
-      theme={vsDark}
-    >
+    <Highlight {...defaultProps} code={code} language={`jsx`} theme={vsDark}>
       {({ className, style, tokens, getLineProps, getTokenProps }) => (
-        <pre className={className} style={style}>
+        <Pre className={className} style={style}>
           {tokens.map((line, i) => (
             <div key={i} {...getLineProps({ line, key: i })}>
               {line.map((token, key) => (
@@ -61,7 +27,7 @@ export const Yo = () => {
               ))}
             </div>
           ))}
-        </pre>
+        </Pre>
       )}
     </Highlight>
   );

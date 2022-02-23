@@ -1,4 +1,4 @@
-export { Button } from "./components/Button";
+export { Button } from "./components/Button/Button";
 export { Icon } from "./components/Icon";
 export { Notification } from "./components/Notification";
 export { Placeholder } from "./components/Placeholder";

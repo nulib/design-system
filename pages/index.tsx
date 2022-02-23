@@ -1,19 +1,22 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { Button } from "../components/Button";
 import { styled } from "../stitches.config";
 import { Section } from "../components/Section";
 import { Notification } from "../components/Notification";
 import { Tag } from "../components/Tag";
 import { SpacerLine } from "../components/SpacerLine";
 import PropsTable from "../components/PropsTable";
-import { CodeBlock } from "../components/CodeBlock";
 import * as codeSamples from "../code-samples";
 import { Placeholder } from "../components/Placeholder";
 import { Icon } from "../components/Icon";
 import { Popover } from "../components/Popover";
-import PrismWrapper, { Yo } from "../components/PrismWrapper";
+import PrismWrapper from "../components/PrismWrapper";
+
+import { Button } from "components/Button/Button";
+
+import ButtonWrapper from "components/Button";
+import IconButton from "components/Button/IconButton";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -86,54 +89,7 @@ const Home: NextPage = () => {
         <Section size="1">
           <h2 id="button">Button</h2>
           <p>A Button</p>
-
-          <Button>Default Button</Button>
-          <Button isPrimary>Primary</Button>
-          <Button isLight>Light Style</Button>
-          <Button isDanger>Delete</Button>
-          <Button isText>Text</Button>
-          <Button isLowercase>Button w/o Uppers</Button>
-          <Button as="span">Button as a span</Button>
-          <Button disabled>Im disabled</Button>
-
-          {/* <CodeBlock>{codeSamples.button}</CodeBlock> */}
-          {/* <PrismWrapper code={codeSamples.button} /> */}
-          <Yo />
-
-          <PropsTable
-            items={[
-              {
-                name: "as",
-                description: "Element type",
-                type: "string",
-              },
-              {
-                name: "isDanger?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isLight?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isLowercase?",
-                description: "Text style",
-                type: "boolean",
-              },
-              {
-                name: "isPrimary?",
-                description: "Color style",
-                type: "boolean",
-              },
-              {
-                name: "isText?",
-                description: "Link style button",
-                type: "boolean",
-              },
-            ]}
-          />
+          <ButtonWrapper />
         </Section>
 
         <SpacerLine />
@@ -144,23 +100,7 @@ const Home: NextPage = () => {
             A Button can wrap multiple elements. To use an icon, wrap your
             button text in a `span`
           </p>
-
-          <Button>
-            <Icon isSmall>
-              <Icon.Add />
-            </Icon>
-            <span>Add Item</span>
-          </Button>
-
-          <CodeBlock>{codeSamples.buttonIcon}</CodeBlock>
-        </Section>
-
-        <SpacerLine />
-
-        <Section size="1">
-          <h2 id="checkbox">Checkbox</h2>
-          <p>A Checkbox</p>
-          <input type="checkbox" />
+          <IconButton />
         </Section>
 
         <SpacerLine />
@@ -195,7 +135,7 @@ const Home: NextPage = () => {
             <Icon.Image />
           </Icon>
 
-          <CodeBlock>{codeSamples.icon}</CodeBlock>
+          <PrismWrapper code={codeSamples.icon} />
 
           <PropsTable
             items={[
@@ -301,7 +241,7 @@ const Home: NextPage = () => {
             Danger: this could be destructive
           </Notification>
 
-          <CodeBlock>{codeSamples.notification}</CodeBlock>
+          <PrismWrapper code={codeSamples.notification} />
 
           <PropsTable
             items={[
@@ -372,7 +312,7 @@ const Home: NextPage = () => {
             </Placeholder>
           </div>
 
-          <CodeBlock>{codeSamples.placeholder}</CodeBlock>
+          <PrismWrapper code={codeSamples.placeholder} />
         </Section>
 
         <SpacerLine />
@@ -454,7 +394,7 @@ const Home: NextPage = () => {
             </Popover.Content>
           </Popover>
 
-          <CodeBlock>{codeSamples.popover}</CodeBlock>
+          <PrismWrapper code={codeSamples.popover} />
 
           <h3>Content</h3>
           <PropsTable
@@ -494,7 +434,7 @@ const Home: NextPage = () => {
             </Popover.Content>
           </Popover>
 
-          <CodeBlock>{codeSamples.popoverText}</CodeBlock>
+          <PrismWrapper code={codeSamples.popoverText} />
         </Section>
 
         <SpacerLine />
@@ -509,7 +449,7 @@ const Home: NextPage = () => {
           <Tag isInfo>Info</Tag>
           <Tag isDanger>Errors ingesting</Tag>
 
-          <CodeBlock>{codeSamples.tag}</CodeBlock>
+          <PrismWrapper code={codeSamples.tag} />
 
           <PropsTable
             items={[
@@ -558,7 +498,7 @@ const Home: NextPage = () => {
             Video
           </Tag>
 
-          <CodeBlock>{codeSamples.tagIcon}</CodeBlock>
+          <PrismWrapper code={codeSamples.tagIcon} />
 
           <PropsTable
             items={[

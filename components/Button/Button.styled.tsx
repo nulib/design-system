@@ -1,4 +1,4 @@
-import { styled, colorHelpers } from "../stitches.config";
+import { styled, colorHelpers } from "../../stitches.config";
 
 export const StyledButton = styled("button", {
   // Reset
