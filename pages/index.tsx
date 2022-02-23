@@ -13,6 +13,7 @@ import * as codeSamples from "../code-samples";
 import { Placeholder } from "../components/Placeholder";
 import { Icon } from "../components/Icon";
 import { Popover } from "../components/Popover";
+import PrismWrapper, { Yo } from "../components/PrismWrapper";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -95,7 +96,9 @@ const Home: NextPage = () => {
           <Button as="span">Button as a span</Button>
           <Button disabled>Im disabled</Button>
 
-          <CodeBlock>{codeSamples.button}</CodeBlock>
+          {/* <CodeBlock>{codeSamples.button}</CodeBlock> */}
+          {/* <PrismWrapper code={codeSamples.button} /> */}
+          <Yo />
 
           <PropsTable
             items={[
