@@ -1,14 +1,9 @@
 import type { NextPage } from "next";
 import Link from "next/link";
 import Image from "next/image";
-import { styled } from "../stitches.config";
-import { Section } from "../components/Section";
-import { Tag } from "../components/Tag/Tag";
-import { SpacerLine } from "../components/SpacerLine";
-import PropsTable from "../components/PropsTable";
-import * as codeSamples from "../code-samples";
-import { Icon } from "../components/Icon/Icon";
-import PrismWrapper from "../components/PrismWrapper";
+import { styled } from "stitches.config";
+import { Section } from "components/Section";
+import { SpacerLine } from "components/SpacerLine";
 
 import ButtonWrapper from "components/Button/ButtonWrapper";
 import IconButton from "components/Button/IconButton";
@@ -35,7 +30,7 @@ const SidebarList = styled("ul", {
   padding: 0,
 });
 const SidebarListItem = styled("li", {
-  padding: "$1",
+  padding: "$1 $1 $3",
   listStyle: "none",
 });
 const StyledN = styled("div", {
@@ -84,9 +79,7 @@ const Home: NextPage = () => {
         </SidebarList>
       </Sidebar>
       <MainWrapper>
-        <Section size="2">
-          <h1>Northwestern Libraries Design System</h1>
-        </Section>
+        <h1>Northwestern Libraries Design System</h1>
 
         <Section size="1">
           <h2 id="button">Button</h2>

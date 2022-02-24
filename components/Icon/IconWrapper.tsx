@@ -2,22 +2,25 @@ import { Icon } from "components/Icon/Icon";
 import { icon as code } from "./code-samples";
 import PrismWrapper from "components/PrismWrapper";
 import PropsTable from "components/PropsTable";
+import { Block } from "components/Block/Block";
 
 const IconWrapper: React.FC = () => {
   return (
     <>
-      <Icon isSmall>
-        <Icon.Title>Audio Work</Icon.Title>
-        <Icon.Audio />
-      </Icon>
-      <Icon isMedium>
-        <Icon.Title>Audio Work</Icon.Title>
-        <Icon.Video />
-      </Icon>
-      <Icon isLarge>
-        <Icon.Title>Image Work</Icon.Title>
-        <Icon.Image />
-      </Icon>
+      <Block>
+        <Icon isSmall>
+          <Icon.Title>Audio Work</Icon.Title>
+          <Icon.Audio />
+        </Icon>
+        <Icon isMedium>
+          <Icon.Title>Audio Work</Icon.Title>
+          <Icon.Video />
+        </Icon>
+        <Icon isLarge>
+          <Icon.Title>Image Work</Icon.Title>
+          <Icon.Image />
+        </Icon>
+      </Block>
 
       <h3>Example usage</h3>
       <PrismWrapper code={code} />

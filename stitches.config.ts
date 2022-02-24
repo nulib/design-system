@@ -1,14 +1,5 @@
 import { createStitches } from "@stitches/react";
-import {
-  gray,
-  blue,
-  red,
-  green,
-  grayDark,
-  blueDark,
-  redDark,
-  greenDark,
-} from "@radix-ui/colors";
+import { grayDark, blueDark, redDark, greenDark } from "@radix-ui/colors";
 
 import type * as Stitches from "@stitches/react";
 export type { VariantProps } from "@stitches/react";
@@ -74,6 +65,13 @@ export const {
       ...nuGold,
       ...nuRed2,
       ...white,
+    },
+    fonts: {
+      sans: "Akkurat Pro Regular, Arial, sans-serif",
+      sansBold: "Akkurat Pro Bold, Arial, sans-serif",
+      display: "Campton, 'Akkurat Pro Regular', Arial, sans-serif",
+      headline: "Campton Extra Light, Courier New, sans-serif",
+      headlineBold: "Campton Bold, Impact, sans-serif",
     },
     space: {
       1: "5px",
@@ -270,6 +268,30 @@ export const globalStyles = globalCss({
   html: {
     color: "$richBlack50",
   },
+  body: {
+    fontFamily: "$sans",
+  },
+  h1: {
+    fontFamily: "$headline",
+    fontSize: "$9",
+    color: "$nuPurple",
+    fontWeight: "normal",
+    margin: "0 0 $5",
+  },
+  h2: {
+    fontFamily: "$headlineBold",
+    fontSize: "$8",
+    color: "$nuPurple",
+    fontWeight: "normal",
+    margin: "0 0 $5",
+  },
+  h3: {
+    fontFamily: "$sans",
+    fontSize: "$7",
+    color: "$richBlack50",
+    fontWeight: "normal",
+    margin: "0 0 $5",
+  },
   pre: {
     "& code": {
       display: "block",
@@ -279,6 +301,16 @@ export const globalStyles = globalCss({
       maxWidth: "100%",
       minWidth: "100px",
       padding: "0",
+    },
+  },
+  a: {
+    color: "$nuPurple",
+    textDecoration: "none",
+    borderBottom: "1px dashed $nuPurple30",
+    fontFamily: "$sansBold",
+    paddingBottom: "$1",
+    "&:hover": {
+      borderBottom: "1px solid $nuPurple",
     },
   },
 });

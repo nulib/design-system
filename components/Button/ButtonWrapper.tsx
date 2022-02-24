@@ -2,18 +2,21 @@ import { Button } from "components/Button/Button";
 import PrismWrapper from "components/PrismWrapper";
 import PropsTable from "components/PropsTable";
 import { button as code } from "./code-samples";
+import { Block } from "components/Block/Block";
 
 const ButtonWrapper: React.FC = () => {
   return (
     <>
-      <Button>Default Button</Button>
-      <Button isPrimary>Primary</Button>
-      <Button isLight>Light Style</Button>
-      <Button isDanger>Delete</Button>
-      <Button isText>Text</Button>
-      <Button isLowercase>Button w/o Uppers</Button>
-      <Button as="span">Button as a span</Button>
-      <Button disabled>Im disabled</Button>
+      <Block>
+        <Button>Default Button</Button>
+        <Button isPrimary>Primary</Button>
+        <Button isLight>Light Style</Button>
+        <Button isDanger>Delete</Button>
+        <Button isText>Text</Button>
+        <Button isLowercase>Button w/o Uppers</Button>
+        <Button as="span">Button as a span</Button>
+        <Button disabled>Im disabled</Button>
+      </Block>
 
       <h3>Example usage</h3>
       <PrismWrapper code={code} />

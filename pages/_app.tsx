@@ -1,7 +1,7 @@
-import "../styles.css";
+import "styles.css";
 import type { AppProps } from "next/app";
 import Head from "next/head";
-import { globalStyles } from "../stitches.config";
+import { globalStyles } from "stitches.config";
 
 function App({ Component, pageProps }: AppProps) {
   globalStyles();

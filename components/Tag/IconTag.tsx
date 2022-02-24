@@ -3,16 +3,19 @@ import { Icon } from "components/Icon/Icon";
 import PrismWrapper from "components/PrismWrapper";
 import PropsTable from "components/PropsTable";
 import { tagIcon as code } from "./code-samples";
+import { Block } from "components/Block/Block";
 
 const IconTag: React.FC = () => {
   return (
     <>
-      <Tag isInfo isIcon>
-        <Icon>
-          <Icon.Video />
-        </Icon>
-        Video
-      </Tag>
+      <Block>
+        <Tag isInfo isIcon>
+          <Icon>
+            <Icon.Video />
+          </Icon>
+          Video
+        </Tag>
+      </Block>
 
       <PrismWrapper code={code} />
 
