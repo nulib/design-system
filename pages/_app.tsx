@@ -14,7 +14,10 @@ function App({ Component, pageProps }: AppProps) {
           name="description"
           content="Northwestern University Libraries Design System"
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link
+          rel="icon"
+          href="https://common.northwestern.edu/v8/images/northwestern-thumbnail.jpg"
+        />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Component {...pageProps} />

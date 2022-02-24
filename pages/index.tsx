@@ -80,6 +80,10 @@ const Home: NextPage = () => {
       </Sidebar>
       <MainWrapper>
         <h1>Northwestern Libraries Design System</h1>
+        <p>
+          A global design system for NUL ReactJS UI components, intended for all
+          front end applications, NPM modules, and user interfaces.
+        </p>
 
         <Section size="1">
           <h2 id="button">Button</h2>

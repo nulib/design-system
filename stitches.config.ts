@@ -73,16 +73,27 @@ export const {
       headline: "Campton Extra Light, Courier New, sans-serif",
       headlineBold: "Campton Bold, Impact, sans-serif",
     },
-    space: {
-      1: "5px",
-      2: "10px",
+    fontSizes: {
+      1: "12px",
+      2: "13px",
       3: "15px",
-      4: "20px",
-      5: "25px",
-      6: "35px",
-      7: "45px",
-      8: "65px",
-      9: "80px",
+      4: "17px",
+      5: "19px",
+      6: "21px",
+      7: "27px",
+      8: "35px",
+      9: "59px",
+    },
+    lineHeights: {
+      1: "12px",
+      2: "13px",
+      3: "15px",
+      4: "17px",
+      5: "19px",
+      6: "21px",
+      7: "27px",
+      8: "35px",
+      9: "59px",
     },
     sizes: {
       1: "5px",
@@ -95,16 +106,16 @@ export const {
       8: "65px",
       9: "80px",
     },
-    fontSizes: {
-      1: "12px",
-      2: "13px",
+    space: {
+      1: "5px",
+      2: "10px",
       3: "15px",
-      4: "17px",
-      5: "19px",
-      6: "21px",
-      7: "27px",
-      8: "35px",
-      9: "59px",
+      4: "20px",
+      5: "25px",
+      6: "35px",
+      7: "45px",
+      8: "65px",
+      9: "80px",
     },
     radii: {
       1: "4px",
@@ -312,6 +323,10 @@ export const globalStyles = globalCss({
     "&:hover": {
       borderBottom: "1px solid $nuPurple",
     },
+  },
+  p: {
+    lineHeight: "$7",
+    marginBlockEnd: "$4",
   },
 });
 
