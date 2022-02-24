@@ -1,3 +1,6 @@
+# Pulled from this guide:
+# https://www.linkedin.com/pulse/deploy-nextjs-app-github-pages-federico-antu%C3%B1a/
+
 name: Deploy to GitHub Pages
 
 on:
