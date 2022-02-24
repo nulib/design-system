@@ -21,7 +21,7 @@ npm install @nulib/design-system
 
 ### Import components
 
-```bash
+```jsx
 import { Button, Section, Tag } from "@nulib/design-system"
 
 ...

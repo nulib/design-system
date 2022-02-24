@@ -1,6 +1,5 @@
 import type { NextPage } from "next";
 import Link from "next/link";
-import Image from "next/image";
 import { styled } from "stitches.config";
 import { Section } from "components/Section";
 import { SpacerLine } from "components/SpacerLine";
@@ -33,7 +32,7 @@ const SidebarListItem = styled("li", {
   padding: "$1 $1 $3",
   listStyle: "none",
 });
-const StyledN = styled("div", {
+const StyledN = styled("img", {
   maxWidth: "$8",
 });
 
@@ -46,14 +45,7 @@ const Home: NextPage = () => {
   return (
     <div>
       <Sidebar>
-        <StyledN>
-          <Image
-            src="/images/N-purple-120.png"
-            width="600"
-            height="577"
-            alt="Northwestern N Logo"
-          />
-        </StyledN>
+        <StyledN src="/images/N-purple-120.png" alt="Northwestern N Logo" />
         <SidebarList>
           <SidebarListItem>
             <Link href="#button">Button</Link>
@@ -82,7 +74,11 @@ const Home: NextPage = () => {
         <h1>Northwestern Libraries Design System</h1>
         <p>
           A global design system for NUL ReactJS UI components, intended for all
-          front end applications, NPM modules, and user interfaces.
+          front end applications, NPM modules, and user interfaces. Built with{" "}
+          <a href="https://nextjs.org/">NextJS</a>,{" "}
+          <a href="https://stitches.dev/">Stitches UI</a>, and packaged with{" "}
+          <a href="https://rollupjs.org/">Rollup</a>. Inspired by{" "}
+          <a href="https://www.radix-ui.com">Radix UI</a>
         </p>
 
         <Section size="1">
