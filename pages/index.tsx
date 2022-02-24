@@ -13,6 +13,7 @@ import PopoverWrapper from "components/Popover/PopoverWrapper";
 import TextTriggerPopover from "components/Popover/TextTriggerPopover";
 import TagWrapper from "components/Tag/TagWrapper";
 import IconTag from "components/Tag/IconTag";
+import { prefix } from "utils/prefix";
 
 const Sidebar = styled("aside", {
   position: "fixed",
@@ -45,7 +46,10 @@ const Home: NextPage = () => {
   return (
     <div>
       <Sidebar>
-        <StyledN src="/images/N-purple-120.png" alt="Northwestern N Logo" />
+        <StyledN
+          src={`${prefix}/images/N-purple-120.png`}
+          alt="Northwestern N Logo"
+        />
         <SidebarList>
           <SidebarListItem>
             <Link href="#button">Button</Link>
