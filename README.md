@@ -1,5 +1,7 @@
 # Design System for Northwestern University Libraries
 
+[https://nulib.github.io/design-system/](https://nulib.github.io/design-system/)
+
 A global design system for NUL ReactJS UI components, intended for all front end applications, NPM modules, and user interfaces.
 
 Built using:
@@ -19,7 +21,7 @@ Built using:
 npm install @nulib/design-system
 ```
 
-### Import components
+### Import individual components
 
 ```jsx
 import { Button, Section, Tag } from "@nulib/design-system"
@@ -51,16 +53,25 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Packaging
 
-### For NPM
+### Build for NPM
 
 ```bash
 npm run build
 ```
 
-### Static site generation (Docs)
+### Build static reference site for Github Docs
 
 ```bash
 npm run build:static
 ```
 
-...Hosting info coming soon
+Per NextJS convention, this will output to the `/out` directory. To view a local static build via a quick local server, run:
+
+```bash
+npm run build:static
+npx serve out
+```
+
+## CI
+
+A static version of the site is automated and pushed to the `gh-pages` branch via Github Actions commits to the `main` branch. View the static site at: [https://nulib.github.io/design-system/](https://nulib.github.io/design-system/)
