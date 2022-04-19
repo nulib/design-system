@@ -1,5 +1,4 @@
 import { createStitches } from "@stitches/react";
-import { grayDark, blueDark, redDark, greenDark } from "@radix-ui/colors";
 
 import type * as Stitches from "@stitches/react";
 export type { VariantProps } from "@stitches/react";
@@ -331,15 +330,6 @@ export const globalStyles = globalCss({
 });
 
 export type CSS = Stitches.CSS<typeof config>;
-
-export const darkTheme = createTheme("dark-theme", {
-  colors: {
-    ...grayDark,
-    ...blueDark,
-    ...redDark,
-    ...greenDark,
-  },
-});
 
 export const colorHelpers = {
   isDanger: { color: "$white", backgroundColor: "$red", fill: "$white" },

@@ -14,7 +14,6 @@ export {
   css,
   theme,
   createTheme,
-  darkTheme,
   getCssText,
   globalCss,
   keyframes,
