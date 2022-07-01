@@ -1,11 +1,11 @@
-import { Popover } from "components/Popover/Popover";
-import { Button } from "components/Button/Button";
-import { Icon } from "components/Icon/Icon";
-import { Placeholder } from "components/Placeholder/Placeholder";
-import PrismWrapper from "components/PrismWrapper";
-import PropsTable from "components/PropsTable";
+import { Popover } from "./Popover";
+import { Button } from "../Button/Button";
+import { Icon } from "../Icon/Icon";
+import { Placeholder } from "../Placeholder/Placeholder";
+import PrismWrapper from "../PrismWrapper";
+import PropsTable from "../PropsTable";
 import { popover as code } from "./code-samples";
-import { Block } from "components/Block/Block";
+import { Block } from "../Block/Block";
 
 const PopoverWrapper: React.FC = () => {
   return (

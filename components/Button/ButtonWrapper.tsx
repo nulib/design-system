@@ -1,8 +1,8 @@
-import { Button } from "components/Button/Button";
-import PrismWrapper from "components/PrismWrapper";
-import PropsTable from "components/PropsTable";
+import { Button } from "./Button";
+import PrismWrapper from "../PrismWrapper";
+import PropsTable from "../PropsTable";
 import { button as code } from "./code-samples";
-import { Block } from "components/Block/Block";
+import { Block } from "../Block/Block";
 
 const ButtonWrapper: React.FC = () => {
   return (

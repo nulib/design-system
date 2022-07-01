@@ -1,8 +1,8 @@
-import { Notification } from "components/Notification/Notification";
-import PrismWrapper from "components/PrismWrapper";
-import PropsTable from "components/PropsTable";
-import { notification as code } from "components/Notification/code-samples";
-import { Block } from "components/Block/Block";
+import { Notification } from "./Notification";
+import PrismWrapper from "../PrismWrapper";
+import PropsTable from "../PropsTable";
+import { notification as code } from "./code-samples";
+import { Block } from "../Block/Block";
 
 const NotificationWrapper = () => {
   return (

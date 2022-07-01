@@ -1,5 +1,5 @@
-import { styled, colorHelpers } from "stitches.config";
-import { StyledIcon } from "components/Icon/Icon.styled";
+import { styled, colorHelpers } from "../../stitches.config";
+import { StyledIcon } from "../Icon/Icon.styled";
 
 export const Tag = styled("div", {
   // Reset

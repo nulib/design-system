@@ -1,8 +1,8 @@
-import { Icon } from "components/Icon/Icon";
+import { Icon } from "./Icon";
 import { icon as code } from "./code-samples";
-import PrismWrapper from "components/PrismWrapper";
-import PropsTable from "components/PropsTable";
-import { Block } from "components/Block/Block";
+import PrismWrapper from "../PrismWrapper";
+import PropsTable from "../PropsTable";
+import { Block } from "../Block/Block";
 
 const IconWrapper: React.FC = () => {
   return (

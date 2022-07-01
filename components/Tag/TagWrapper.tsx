@@ -1,8 +1,8 @@
-import { Tag } from "components/Tag/Tag";
-import PrismWrapper from "components/PrismWrapper";
-import PropsTable from "components/PropsTable";
+import { Tag } from "./Tag";
+import PrismWrapper from "../PrismWrapper";
+import PropsTable from "../PropsTable";
 import { tag as code } from "./code-samples";
-import { Block } from "components/Block/Block";
+import { Block } from "../Block/Block";
 
 const TagWrapper: React.FC = () => {
   return (

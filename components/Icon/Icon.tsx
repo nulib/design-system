@@ -1,7 +1,7 @@
 import React from "react";
-import { VariantProps, CSS } from "stitches.config";
-import { StyledIcon } from "components/Icon/Icon.styled";
-import { Add, Audio, Close, Image, Video } from "components/Icons";
+import { VariantProps, CSS } from "../../stitches.config";
+import { StyledIcon } from "./Icon.styled";
+import { Add, Audio, Close, Image, Video } from "../Icons";
 
 /**
  * Define SVG subelement <title>
