@@ -1,8 +1,8 @@
-import { Placeholder } from "components/Placeholder/Placeholder";
-import { Icon } from "components/Icon/Icon";
-import PrismWrapper from "components/PrismWrapper";
+import { Placeholder } from "./Placeholder";
+import { Icon } from "../Icon/Icon";
+import PrismWrapper from "../PrismWrapper";
 import { placeholder as code } from "./code-examples";
-import { Block } from "components/Block/Block";
+import { Block } from "../Block/Block";
 
 const PlaceholderWrapper: React.FC = () => {
   return (

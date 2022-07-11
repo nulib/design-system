@@ -2,7 +2,7 @@ import React from "react";
 import { StyledPlaceholder } from "./Placeholder.styled";
 
 type PropShape = {
-  children: React.ReactChild | React.ReactChild[];
+  children: React.ReactNode;
 };
 
 export const Placeholder: React.FC<PropShape> = ({ children }) => {

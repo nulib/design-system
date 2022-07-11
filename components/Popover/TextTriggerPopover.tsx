@@ -1,5 +1,5 @@
-import { Popover } from "components/Popover/Popover";
-import PrismWrapper from "components/PrismWrapper";
+import { Popover } from "./Popover";
+import PrismWrapper from "../PrismWrapper";
 import { popoverText as code } from "./code-samples";
 
 const TextTriggerPopover: React.FC = () => {
