@@ -3,8 +3,8 @@ import Link from "next/link";
 import { styled } from "stitches.config";
 import { Section } from "components/Section";
 import { SpacerLine } from "components/SpacerLine";
-
 import ButtonWrapper from "components/Button/ButtonWrapper";
+import FooterWrapper from "components/Footer/FooterWrapper";
 import IconButton from "components/Button/IconButton";
 import IconWrapper from "components/Icon/IconWrapper";
 import NotificationWrapper from "components/Notification/NotificationWrapper";
@@ -58,6 +58,9 @@ const Home: NextPage = () => {
             <Link href="#checkbox">Checkbox</Link>
           </SidebarListItem>
           <SidebarListItem>
+            <Link href="#footer">Footer</Link>
+          </SidebarListItem>
+          <SidebarListItem>
             <Link href="#icon">Icon</Link>
           </SidebarListItem>
           <SidebarListItem>
@@ -100,6 +103,14 @@ const Home: NextPage = () => {
             button text in a `span`
           </p>
           <IconButton />
+        </Section>
+
+        <SpacerLine />
+
+        <Section size="1">
+          <h2 id="footer">Footer</h2>
+          <p>Northwestern Global Marketing footer</p>
+          <FooterWrapper />
         </Section>
 
         <SpacerLine />
