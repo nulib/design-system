@@ -1,5 +1,6 @@
 export { Block } from "./components/Block/Block";
 export { Button } from "./components/Button/Button";
+export { Footer } from "./components/Footer/Footer";
 export { Icon } from "./components/Icon/Icon";
 export { Notification } from "./components/Notification/Notification";
 export { Placeholder } from "./components/Placeholder/Placeholder";
