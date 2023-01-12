@@ -11,6 +11,11 @@ import React from "react";
 type FooterProps = { css?: CSS };
 
 export const Footer = (props: FooterProps) => {
+  const currentYear = () => {
+    const today = new Date();
+    return today.getFullYear();
+  };
+
   return (
     <FooterStyled {...props}>
       {/* Column 1 */}
@@ -28,7 +33,7 @@ export const Footer = (props: FooterProps) => {
           </div>
         </a>
         <FooterList>
-          <li>© 2022 Northwestern University</li>
+          <li>&copy; {currentYear()} Northwestern University</li>
           <li>
             <a href="https://www.northwestern.edu/emergency/index.html">
               Campus Emergency Information
@@ -53,7 +58,7 @@ export const Footer = (props: FooterProps) => {
             </a>
           </li>
           <li>
-            <a href="http://policies.northwestern.edu/">University Policies</a>
+            <a href="https://policies.northwestern.edu/">University Policies</a>
           </li>
         </FooterList>
       </FooterContent>
@@ -146,18 +151,24 @@ export const Footer = (props: FooterProps) => {
               <a href="http://northwestern.libanswers.com/">FAQs</a>
             </li>
             <li>
-              <a href="about/support/index.html">Support Us</a>
+              <a href="https://www.library.northwestern.edu/about/support/index.html">
+                Support Us
+              </a>
             </li>
             <li>
-              <a href="about/library-jobs/index.html">Library Jobs</a>
+              <a href="https://www.library.northwestern.edu/about/library-jobs/index.html">
+                Library Jobs
+              </a>
             </li>
             <li>
-              <a href="about/administration/policies/index.html">
+              <a href="https://www.library.northwestern.edu/about/administration/policies/index.html">
                 Library Policies
               </a>
             </li>
             <li>
-              <a href="about/contact/general-feedback.html">Provide Feedback</a>
+              <a href="https://www.library.northwestern.edu/about/contact/general-feedback.html">
+                Provide Feedback
+              </a>
             </li>
           </FooterList>
         </div>

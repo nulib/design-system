@@ -4,7 +4,7 @@ export const FooterStyled = styled("footer", {
   background: "$nuPurple",
   color: "$white",
   display: "grid",
-  fontFamily: "$sans",
+  fontFamily: "$sansLight",
   fontSize: "$3",
   gap: "$4",
   gridTemplateColumns: "1",
@@ -13,10 +13,11 @@ export const FooterStyled = styled("footer", {
 
   "& a": {
     color: "$white",
-    fontFamily: "$sans",
+    fontFamily: "$sansLight",
 
     "&:hover, &:focus": {
       textDecoration: "none",
+      color: "$white",
     },
   },
 

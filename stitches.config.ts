@@ -67,6 +67,7 @@ export const {
     },
     fonts: {
       sans: "Akkurat Pro Regular, Arial, sans-serif",
+      sansLight: "Akkurat Pro Light, Arial, sans-serif",
       sansBold: "Akkurat Pro Bold, Arial, sans-serif",
       display: "Campton, 'Akkurat Pro Regular', Arial, sans-serif",
       headline: "Campton Extra Light, Courier New, sans-serif",
