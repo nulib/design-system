@@ -3,13 +3,12 @@ import { styled } from "../../stitches.config";
 export const FooterStyled = styled("footer", {
   background: "$nuPurple",
   color: "$white",
-  display: "grid",
+  display: "flex",
+  flexDirection: "column",
+  flexWrap: "nowrap",
   fontFamily: "$sansLight",
   fontSize: "$3",
-  gap: "$4",
-  gridTemplateColumns: "1",
   padding: "$6 0",
-  width: "100%",
 
   "& a": {
     color: "$white",
@@ -19,14 +18,6 @@ export const FooterStyled = styled("footer", {
       textDecoration: "none",
       color: "$white",
     },
-  },
-
-  "@bp2": {
-    gridTemplateColumns: "repeat(2, 1fr)",
-  },
-
-  "@bp3": {
-    gridTemplateColumns: "repeat(4, 1fr)",
   },
 
   "& .hide-label": {
@@ -65,6 +56,36 @@ export const FooterContent = styled("div", {
   },
   "@bp2": {
     marginBottom: "0",
+  },
+});
+
+export const FooterContentWrapper = styled("div", {
+  width: "100%",
+  display: "grid",
+  gap: "$4",
+  gridTemplateColumns: "1",
+
+  "@bp2": {
+    gridTemplateColumns: "repeat(2, 1fr)",
+  },
+
+  "@bp3": {
+    gridTemplateColumns: "repeat(4, 1fr)",
+  },
+});
+
+export const FooterCopyright = styled("div", {
+  color: "$nuPurple10",
+  margin: "$4 0 0",
+
+  "> p": {
+    lineHeight: "$6 !important",
+
+    a: {
+      border: "none",
+      color: "inherit",
+      textDecoration: "underline",
+    },
   },
 });
 

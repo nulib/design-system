@@ -8,7 +8,7 @@ const FooterWrapper: React.FC = () => {
   return (
     <>
       <Block>
-        <Footer />
+        <Footer isCopyright />
       </Block>
 
       <h3>Example usage</h3>
