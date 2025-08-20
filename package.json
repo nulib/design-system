@@ -18,8 +18,8 @@
     "test": "echo \"Error: no test specified\" && exit 0"
   },
   "dependencies": {
-    "@radix-ui/react-popover": "^0.1.7-rc.43",
-    "@stitches/react": "^1.2.7",
+    "@radix-ui/react-popover": "^1.1.15",
+    "@stitches/react": "^1.2.8",
     "react": "^18.2.0"
   },
   "devDependencies": {
@@ -35,9 +35,6 @@
     "rollup": "^2.76.0",
     "rollup-plugin-typescript2": "^0.32.1",
     "typescript": "^4.5.5"
-  },
-  "peerDependencies": {
-    "react-dom": "^16.8 || ^17.0 || ^18.0"
   },
   "publishConfig": {
     "registry": "https://registry.npmjs.org"

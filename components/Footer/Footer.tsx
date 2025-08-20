@@ -7,9 +7,9 @@ import {
   FooterStyled,
   Social,
 } from "./Footer.styled";
+
 import { CSS } from "../../stitches.config";
 import React from "react";
-
 interface FooterProps {
   css?: CSS;
   isCopyright?: boolean;

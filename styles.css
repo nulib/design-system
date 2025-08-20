@@ -4,54 +4,6 @@
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: "Akkurat Pro Regular";
-  src: url("https://common.northwestern.edu/v8/css/fonts/AkkuratProRegular.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Akkurat Pro Italic";
-  src: url("https://common.northwestern.edu/v8/css/fonts/AkkuratProItalic.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Akkurat Pro Bold";
-  src: url("https://common.northwestern.edu/v8/css/fonts/AkkuratProBold.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Akkurat Pro Bold Italic";
-  src: url("https://common.northwestern.edu/v8/css/fonts/AkkuratProBoldItalic.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Campton Extra Light";
-  src: url("https://common.northwestern.edu/v8/css/fonts/CamptonExtraLight.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: "Campton Bold";
-  src: url("https://common.northwestern.edu/v8/css/fonts/CamptonBold.woff")
-    format("woff");
-  font-weight: normal;
-  font-style: normal;
-}
-
 svg {
   display: block;
   vertical-align: middle;

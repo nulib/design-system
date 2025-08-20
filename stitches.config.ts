@@ -1,6 +1,9 @@
+import type * as Stitches from "@stitches/react";
+
+import fonts, { northwesternFonts } from "./styles/fonts";
+
 import { createStitches } from "@stitches/react";
 
-import type * as Stitches from "@stitches/react";
 export type { VariantProps } from "@stitches/react";
 
 const nuPurples = {
@@ -65,14 +68,7 @@ export const {
       ...nuRed2,
       ...white,
     },
-    fonts: {
-      sans: "Akkurat Pro Regular, Arial, sans-serif",
-      sansLight: "Akkurat Pro Light, Arial, sans-serif",
-      sansBold: "Akkurat Pro Bold, Arial, sans-serif",
-      display: "Campton, 'Akkurat Pro Regular', Arial, sans-serif",
-      headline: "Campton Extra Light, Courier New, sans-serif",
-      headlineBold: "Campton Bold, Impact, sans-serif",
-    },
+    fonts: { ...fonts },
     fontSizes: {
       1: "12px",
       2: "13px",
@@ -275,30 +271,40 @@ export const {
   },
 });
 
+const fontFaces = {
+  "@font-face": northwesternFonts.map((font) => ({
+    fontFamily: `${font.name}`,
+    src: `url(${font.value}) format("woff")`,
+    fontWeight: "normal",
+    fontStyle: "normal",
+  })),
+};
+
 export const globalStyles = globalCss({
+  ...fontFaces,
   html: {
     color: "$richBlack50",
   },
   body: {
-    fontFamily: "$sans",
+    fontFamily: "$northwesternSansRegular",
   },
   h1: {
-    fontFamily: "$headline",
-    fontSize: "$9",
+    fontFamily: "$northwesternDisplayLight",
+    fontSize: "$7",
     color: "$nuPurple",
-    fontWeight: "normal",
-    margin: "0 0 $5",
+    fontWeight: "400",
+    margin: "$5 0",
   },
   h2: {
-    fontFamily: "$headlineBold",
-    fontSize: "$8",
+    fontFamily: "$northwesternDisplayBold",
+    fontSize: "$6",
     color: "$nuPurple",
     fontWeight: "normal",
     margin: "0 0 $5",
   },
   h3: {
-    fontFamily: "$sans",
-    fontSize: "$7",
+    fontFamily: "$northwesternSansBold",
+    fontSize: "$5",
     color: "$richBlack50",
     fontWeight: "normal",
     margin: "0 0 $5",
