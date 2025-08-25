@@ -1,6 +1,6 @@
 import React from "react";
 import { Icon } from "../Icon/Icon";
-import { styled, colorHelpers, CSS, VariantProps } from "../../stitches.config";
+import { styled, colorHelpers } from "../../stitches.config";
 
 const StyledNotification = styled("div", {
   // Reset
@@ -52,13 +52,16 @@ const StyledClose = styled("button", {
   border: "none",
 });
 
-type NotificationShape = {
-  children: React.ReactChild | React.ReactChild[];
+type NotificationProps = React.HTMLAttributes<HTMLDivElement> & {
+  children: React.ReactNode;
   isClosable?: boolean;
+  isDanger?: boolean;
+  isCentered?: boolean;
+  isInfo?: boolean;
+  isSuccess?: boolean;
+  isWarning?: boolean;
+  css?: any;
 };
-type NotificationVariants = VariantProps<typeof StyledNotification>;
-type NotificationProps = NotificationShape &
-  NotificationVariants & { css?: CSS };
 
 export const Notification = (props: NotificationProps) => {
   // Peel isClosable off, as it will make Stitches complain if it gets through
